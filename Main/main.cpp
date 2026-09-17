@@ -32,15 +32,28 @@ int main()
     cintabytes = new unsigned char[cantidad_bytes]();
     //Reserva en memoria el espacio necesario para la cinta e inicializa los bytes en 0
 
+
+
     int** tablero; //puntero del tablero
 
     tablero = new int*[filas]; //reservamos memoria para la cantidad de filas
 
     for (int i = 0; i < filas; i++)
     {
-        tablero[i] = new int[columnas]; //reservamos memoria para la cantidad de columnas
+        tablero[i] = new int[columnas](); //reservamos memoria para la cantidad de columnas
     }
 
+
+    for (int i = 0; i < filas; i++)  //bucle para recorrer el tablero
+    {
+        for (int j = 0; j < columnas; j++)
+        {
+            // aquí trabajamos con el tablero[i][j]
+
+        cout << tablero[i][j] << " ";
+        }
+        cout <<endl;
+    }
 
 
 
