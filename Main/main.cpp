@@ -32,19 +32,24 @@ int main()
     cintabytes = new unsigned char[cantidad_bytes]();
     //Reserva en memoria el espacio necesario para la cinta e inicializa los bytes en 0
 
-    cintabytes[0] = 0b001<<5;
-    for (int i = 7; i >= 0; i--)
-    {
-        cout << ((cintabytes[0] >> i) & 1);
-    }
-    cout << endl;
+    int** tablero; //puntero del tablero
 
-    cintabytes[0] |= 0b111<<2;
-    for (int i = 7; i >= 0; i--)
+    tablero = new int*[filas]; //reservamos memoria para la cantidad de filas
+
+    for (int i = 0; i < filas; i++)
     {
-        cout << ((cintabytes[0] >> i) & 1);
+        tablero[i] = new int[columnas]; //reservamos memoria para la cantidad de columnas
     }
-    cout << endl;
+
+
+
+
+    for (int i = 0; i < filas; i++)
+    {
+        delete[] tablero[i];
+    }
+
+    delete[] tablero;
 
     delete[] cintabytes ;    //liberamos la memoria reservada para la cinta
     return 0;
