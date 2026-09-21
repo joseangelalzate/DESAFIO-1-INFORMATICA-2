@@ -14,7 +14,7 @@ unsigned char* armartablero( int filas, int columnas)
 {
     int bytes = total_bytes(filas, columnas);
 
-    unsigned char tablero;
+    unsigned char* tablero;
     tablero = new unsigned char[bytes]();
     return tablero;
 }

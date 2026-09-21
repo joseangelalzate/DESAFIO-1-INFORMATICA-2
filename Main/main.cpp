@@ -11,13 +11,8 @@ int main()
     int filas, columnas, cantidad_bytes, bit_inicial;
 
 
-    cout<<"================================="<<endl;
-    cout<<"     SWEET CRUSH JYL               "<<endl;
-    cout<<"================================="<<endl;
-
-
-
     cout<<"ingrese el numero de filas"<<endl;
+
     cin>>filas;
 
 
@@ -25,6 +20,17 @@ int main()
     cin>>columnas;
     int posicion;
     // posicion = filas* columnas+columna;
+
+
+    cout<<"================================="<<endl;
+    cout<<"     SWEET CRUSH JYL               "<<endl;
+    cout<<"================================="<<endl;
+
+    if (filas <= 0 || columnas <= 0)
+    {
+        cout<<"Dimensiones invalidas."<<endl;
+        return 0;
+    }
 
 
     // Fichas:
@@ -44,9 +50,9 @@ int main()
     //posible funcion // Calculo de cuantos bytes necesitamos para guardar todas las fichas
 
     cintabytes = new unsigned char[cantidad_bytes]();
-    //Reserva en memoria el espacio necesario para la cinta e inicializa los bytes en 0
 
 
+    //este tablero solo es un ejemplo grafico
 
     int** tablero; //puntero del tablero
 
@@ -57,22 +63,15 @@ int main()
         tablero[i] = new int[columnas](); //reservamos memoria para la cantidad de columnas
     }
 
-
-    if (filas <= 0 || columnas <= 0)
-    {
-        cout<<"Dimensiones invalidas."<<endl;
-        return 0;
-    }
-
     for (int i = 0; i < filas; i++)  //bucle para recorrer el tablero
     {
         for (int j = 0; j < columnas; j++)
         {
             // aquí trabajamos con el tablero[i][j]
 
-          //bit_inicial = posicion * 3//obtener la posicion de la ficha en el tablero dentro de la cinta
+            //bit_inicial = posicion * 3//obtener la posicion de la ficha en el tablero dentro de la cinta
 
-         cout tablero[i][j] << " ";
+            cout<<tablero[i][j] << " ";
         }
         cout <<endl;
     }
@@ -85,6 +84,9 @@ int main()
     }
 
     delete[] tablero;
+
+    //Reserva en memoria el espacio necesario para la cinta e inicializa los bytes en 0 con "()"
+
 
     delete[] cintabytes ;    //liberamos la memoria reservada para la cinta
     return 0;
